@@ -1,13 +1,17 @@
 #include <stdio.h>
 
 int sum(int n){
-    if(n==1) return 1;
-    else return sum(n-1)+fac(n);
-}
-
-int fac(int n){
-    if(n==1) return 1;
-    else return fac(n-1)*n;
+    int sum = 0;
+    for(int i = 1; i<= n; i++)
+    {
+        int fac = 1;
+        for(int j= i;j>0;j--)
+        {
+            fac = fac * j;
+        }
+        sum = sum + fac;
+    }
+    return sum;
 }
 
 int main()
